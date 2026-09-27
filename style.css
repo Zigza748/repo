@@ -43,3 +43,16 @@ body, .section-pattern, .section-light, .section-tint, .section-white { backgrou
 .gallery-grid img { width: 100%; height: 260px; display: block; object-fit: cover; }
 @media (max-width: 700px) { .event-grid, .service-grid, .review-grid, .gallery-grid { grid-template-columns: 1fr; }.gallery-grid img { height: 300px; } }
 @media (max-width: 700px) { body { overflow-x: hidden; }.hero h1 { font-size: clamp(2rem, 10vw, 3.8rem); overflow-wrap: anywhere; }.hero-text { font-size: 1.05rem; }.hero-copy { width: 100%; max-width: 100%; } }
+.service-grid { grid-template-columns: repeat(4, 1fr); max-width: 1200px; }
+.service-grid article { min-height: 170px; padding: 0 0 24px; overflow: hidden; }
+.service-image { width: 100%; aspect-ratio: 4 / 5; display: block; object-fit: cover; object-position: top; }
+.service-grid h3, .service-grid p { margin-left: 24px; margin-right: 24px; }
+.service-grid h3 { margin-top: 22px; }
+.service-image-button { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+.service-image-button:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; }
+.image-lightbox { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; padding: 5vh 5vw; background: rgba(20, 25, 22, .92); }
+.image-lightbox[hidden] { display: none; }
+.lightbox-image { max-width: 92vw; max-height: 90vh; width: auto; height: auto; object-fit: contain; box-shadow: 0 12px 40px rgba(0, 0, 0, .35); }
+.lightbox-close { position: absolute; top: 18px; right: 24px; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; background: transparent; color: white; font-size: 2rem; line-height: 1; cursor: pointer; }
+.lightbox-caption { position: absolute; bottom: 14px; left: 5vw; right: 5vw; margin: 0; color: white; text-align: center; font-size: .9rem; }
+@media (max-width: 700px) { .service-grid { grid-template-columns: 1fr; }.service-grid article { min-height: auto; } }
